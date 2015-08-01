@@ -5,7 +5,7 @@ import java.util.Date;
 /**
  * Created by houxiang on 15/7/28.
  */
-public class Message {
+public class RowMessage {
     private String uid;
     private String mid;
     private String time;
