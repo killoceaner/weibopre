@@ -8,8 +8,7 @@ import java.util.Date;
 public class RowMessage {
     private String uid;
     private String mid;
-    private String time;
-    private String content;
+
     private int forward_count;
     private int comment_count;
     private int like_count;
@@ -30,21 +29,7 @@ public class RowMessage {
         this.mid = mid;
     }
 
-    public String getTime() {
-        return time;
-    }
 
-    public void setTime(String time) {
-        this.time = time;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
 
     public int getForward_count() {
         return forward_count;
@@ -68,5 +53,9 @@ public class RowMessage {
 
     public void setLike_count(int like_count) {
         this.like_count = like_count;
+    }
+
+    public String toString(){
+        return uid+"\t"+mid+"\t"+this.forward_count+"\t"+this.comment_count+"\t"+this.like_count+"\n";
     }
 }

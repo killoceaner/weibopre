@@ -1,5 +1,7 @@
 package com.tianchi.onex;
 
+import java.util.List;
+
 /**
  * Created by houxiang on 15/7/29.
  */
@@ -12,18 +14,16 @@ public class Record {
     private int comment_count;
     private int like_count;
     private String tags;
+    private double weight ;
 
     public Record(){
 
     }
-    public Record(int id, String uid, String mid , String content, int forward_count , int comment_count , int like_count){
-        this.id = id ;
+    public Record( String uid, String mid , String content ){
+
         this.uid = uid ;
         this.mid = mid;
         this.content = content ;
-        this.forward_count = forward_count ;
-        this.comment_count = comment_count ;
-        this.like_count = like_count ;
     }
 
     public int getId() {
@@ -88,5 +88,30 @@ public class Record {
 
     public void setTags(String tags) {
         this.tags = tags;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
+    @Override
+    public String toString() {
+        return this.uid+"\t"+this.mid+"\t"+forward_count+","+comment_count+","+like_count+"\n";
+    }
+
+//    public  void setArgs(int forward_count , int comment_count , int like_count){
+//        this.forward_count = forward_count;
+//        this.like_count = like_count ;
+//        this.comment_count = comment_count ;
+//    }
+
+    public void setArgs(List<Integer> args){
+        this.forward_count = args.get(0);
+        this.comment_count = args.get(1);
+        this.like_count = args.get(2);
     }
 }

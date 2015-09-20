@@ -1,14 +1,18 @@
 package com.tianchi.util;
 
+import org.ansj.domain.Term;
+import org.ansj.splitWord.analysis.ToAnalysis;
+
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
  * Created by houxiang on 15/8/1.
  */
 public class AnalysisUtil {
-    Map<String , Integer> wordfen = new HashMap<String, Integer>();
-    public static void segText(String test){
-
+    public static void main(String[] args){
+        List<Term> terms = ToAnalysis.parse("湛云大傻逼");
+        System.out.println(terms);
     }
 }
